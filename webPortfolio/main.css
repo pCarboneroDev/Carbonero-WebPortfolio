@@ -1,0 +1,103 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffffff;
+}
+
+.miniCard{
+  font-size: 1.5rem;
+  color: white;
+  background: #fc0356;
+  padding: 0.5rem 2rem;
+  border-radius: .3rem;
+  box-shadow: 0 4px 10px #fc0356;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  white-space: nowrap;  /* no permitir saltos de línea */
+}
+
+.miniCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px #fc0356; 
+}
+
+.miniCardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-x: auto; 
+  scrollbar-width: thin;
+  padding: 0.5rem 0;     
+  scrollbar-width: thin; 
+  scroll-behavior: smooth;
+}
+
+.miniCardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.hero {
+  height: 100vh; /* altura = 100% de la ventana */
+  width: 100%;    /* ancho completo */
+ /* background: url('https://picsum.photos/1920/1080') center center/cover no-repeat;*/
+ background: #6f42c1 url(assets/images/herobg.png) center/cover no-repeat;
+}
+
+.hero h3{
+  font-weight: normal;
+}
+
+.neonTitle {
+  color: #ffcc00;
+  text-shadow: 0 4px 10px #ffcc00;
+}
+
+#experienceCard {
+  background-color: #2b2b2b;
+}
+
+#startButton {
+  background-color: #fc0356;
+  color: white;
+  box-shadow: 0 4px 10px #fc0356;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#startButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px #fc0356; 
+}
+
+/*
+--black: #050505ff;
+--eerie-black: #1a1817ff;
+--black-bean: #440101ff;
+--dark-red: #8e0204ff;
+--engineering-orange: #cd0000ff;
+--red-cmyk: #ea0d1bff;
+--gray: #767676ff;
+--silver: #bdb8b6ff;
+--platinum: #ddddddff;
+--white: #ffffffff;
+*/
+
+.color-1 {
+  color: #2b2b2b;
+}
+.color-2 {
+  color: #fc0356;
+}
+.color-3 {
+  color: #1a1a1a;
+}
+.color-4 {
+  color: #00fff7;
+}
+.color-5 {
+  color: #ffcc00;
+}
+
+
+#startButton.aos-animate {
+  transition-duration: 2700ms !important;
+}
