@@ -88,18 +88,31 @@
 
 
     <!-- ABOUT ME -->
-    <div class="container"  id="About">
+    <div class="container" id="About">
         <div>
-            <h1 data-aos="fade-up" class="neonTitle">About me</h1>
-            <p>
-                Hi! My name is Pablo Carbonero, and I’m a developer with a background in both 3D Animation and Software Development. During my 3D Animation studies, I had the opportunity to work as a programmer on the indie video game Mencía: A Never Was Tale, which was later released on Steam. After that, I started a degree in Cross-Platform App Development, and as part of my internship, I contributed to building a Pokémon TCG Pocket trading app with Flutter. Although I eventually moved on, the project continues to grow and evolve.
+            <h1 class="neonTitle">About me</h1>
+            <div class="row align-items-center">
+      
+                <!-- Foto a la izquierda -->
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="assets/images/profile.png" alt="Profile" 
+                        class="rounded-circle img-fluid shadow" style="width: 200px;">
+                </div>
+                
+                <!-- Texto a la derecha -->
+                <div class="col-md-8">
 
-                I’m passionate about mobile app development, and my main goal is to grow professionally in this field. At the same time, I’m open to opportunities in fullstack or backend development, where I can apply my problem-solving skills and keep expanding my technical knowledge.
+                    <p>
+                    Hi! My name is Pablo Carbonero, and I’m a developer with a background in both 3D Animation and Software Development. During my 3D Animation studies, I had the opportunity to work as a programmer on the indie video game Mencía: A Never Was Tale, which was later released on Steam. After that, I started a degree in Cross-Platform App Development, and as part of my internship, I contributed to building a Pokémon TCG Pocket trading app with Flutter. Although I eventually moved on, the project continues to grow and evolve.
 
-                Outside of coding, I enjoy music and video games. I play the guitar and practice guttural singing. I was even part of a band that got to play live once before disbanding. Creativity and music inspire me and help me stay balanced as a developer.
+                    <br><br>I’m passionate about mobile app development, and my main goal is to grow professionally in this field. At the same time, I’m open to opportunities in fullstack or backend development, where I can apply my problem-solving skills and keep expanding my technical knowledge.
 
-                Feel free to check out my projects, and don’t hesitate to reach out if you’d like to collaborate!
-            </p>
+                    <br><br>Outside of coding, I enjoy music and video games. I play the guitar and practice guttural singing. I was even part of a band that got to play live once before disbanding. Creativity and music inspire me and help me stay balanced as a developer.
+
+                    <br><br>Feel free to check out my projects, and don’t hesitate to reach out if you’d like to collaborate!
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -159,6 +172,10 @@
                     <div>
                         <h4 class="card-title">Videogames developer</h4>
                         <h6 class="card-text">Timber films</h6>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-calendar-week"></i> <span>March 2023 - June 2023</span>
+                            <i class="bi bi-geo-alt"></i> <span>Seville, Spain</span>
+                        </div>  
                     </div>     
                 </div>
                 <br>
@@ -182,19 +199,21 @@
                         You can see my name in the final credits!
                     </li>
                 </ul>
+                
 
 
-
-                <div class="card" id="experienceCard">
-                    <div class="card-body">
-                        <img class="card-img-top" src="https://cdn.devuego.com/portadas/mencia-a-never-was-tale.jpg" alt="Card image" style="width:100px">
-                        <div class="card-footer">
-                            <div class="card-footer text-center">
-                                <a href="https://store.steampowered.com/app/2392660/Mencia_A_never_was_tale/" class="btn btn-outline-light btn-sm">Steam</a>
-                            </div>
-                        </div>
-                    </div>                     
+                <div>
+                    <img src="https://cdn.devuego.com/portadas/mencia-a-never-was-tale.jpg"
+                            alt="Card image"
+                            class="img-fluid rounded mb-2"
+                            style="width:100px">
+                    <div>
+                        <a href="https://store.steampowered.com/app/2392660/Mencia_A_never_was_tale/" class="btn btn-outline-light btn-sm">
+                            Steam
+                        </a>
+                    </div>
                 </div>
+                
             </div>
         </div>
         
@@ -288,21 +307,21 @@
                     <h5 class="card-title">Android Guitar Tuner</h5>
 
                     <p class="card-text">
-                        Cross-platform mobile tuner app built with Kotlin and Jetpack Compose.
-                        Do non dolor Lorem voluptate incididunt et eu do ex non. Adipisicing ipsum Lorem culpa ut. Est eiusmod aliqua elit ea fugiat sint enim deserunt eiusmod.
+                        Android tuner app built with Kotlin and Jetpack Compose.
+                        App that process audio in real time to indicate the user to loose or tighten the guitar strings. It also allows to save songs with 
+                        determined tunings in a local database with the possibility to create, load and delete backups in the cloud of user data.
                     </p>
 
                     <div style="align-self: self-end;">
-                        <span class="badge bg-primary">Kotlin</span>
-                        <span class="badge bg-success">Compose</span>
-                        <span class="badge bg-warning text-dark">Android</span>
+                        <span class="badge" id="langBadge">Kotlin</span>
+                        <span class="badge" id="techBadge">Compose</span>
+                        <span class="badge" id="platBadge">Android</span>
                     </div>
                 </div>
             </div>
             
             <div class="card-footer text-center">
-            <a href="https://github.com/tu-repo" class="btn btn-outline-light btn-sm">GitHub</a>
-            <a href="https://demo.com" class="btn btn-primary btn-sm">Demo</a>
+            <a href="https://github.com/pCarboneroDev/ProyectoFinalDam" class="btn btn-outline-light btn-sm">GitHub</a>
             </div>
         </div>
 
@@ -328,8 +347,7 @@
             </div>
             
             <div class="card-footer text-center">
-                <a href="https://github.com/tu-repo" class="btn btn-outline-light btn-sm">GitHub</a>
-                <a href="https://demo.com" class="btn btn-primary btn-sm">Demo</a>
+                <a href="https://github.com/pCarboneroDev/practicasFlutter" class="btn btn-outline-light btn-sm">GitHub</a>
             </div>
         </div>
     </div>
@@ -339,9 +357,9 @@
         <h1 class="neonTitle">Contact</h1>
 
         <div class="d-flex align-items-start gap-4">
-            <p data-aos="fade-right" data-aos-duration="2000">E-Mail</p>
-            <p data-aos="fade-right" data-aos-duration="1500">LinkedIn</p>
-            <p data-aos="fade-right" data-aos-duration="1000">GitHub</p>
+            <a class="contactLink" data-aos="fade-right" data-aos-duration="2000" href="mailto:pcarboneroalmellones@gmail.com">E-Mail</a>
+            <a class="contactLink" data-aos="fade-right" data-aos-duration="1500" href="https://www.linkedin.com/in/pablo-carbonero-almellones-2b63a422b">LinkedIn</a>
+            <a class="contactLink" data-aos="fade-right" data-aos-duration="1000" href="https://github.com/pCarboneroDev">GitHub</a>
         </div>      
     </div>
 

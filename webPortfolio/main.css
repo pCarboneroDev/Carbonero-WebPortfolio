@@ -54,7 +54,7 @@ i{
 .neonTitle {
   color: #ffcc00;
   text-shadow: 0 4px 10px #ffcc00;
-  text-align: center;
+
 }
 
 .container{
@@ -63,6 +63,18 @@ i{
 
 .card{
   margin: 20px 0;
+}
+
+.contactLink {
+  font-size: larger;
+  text-align: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  color: white;
+}
+.contactLink:hover {
+  transform: scale(1.05);
+  color: #fc0356;
 }
 
 #experienceCard {
@@ -88,6 +100,18 @@ i{
 #startButton:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px #fc0356; 
+}
+
+#langBadge{
+  background-color: #fc0356;
+}
+
+#techBadge{
+  background-color: #02fff7;
+}
+
+#platBadge{
+  background-color: #ffcc02;
 }
 
 /*
