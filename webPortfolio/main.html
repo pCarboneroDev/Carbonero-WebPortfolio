@@ -13,6 +13,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   </head>  
 
   <body data-bs-spy="scroll" data-bs-target="#nav" data-bs-offset="150" tabindex="0">
@@ -84,12 +86,11 @@
     </div>
     </section>
 
-    <br>
 
     <!-- ABOUT ME -->
     <div class="container"  id="About">
         <div>
-            <h1 data-aos="fade-up">About me</h1>
+            <h1 data-aos="fade-up" class="neonTitle">About me</h1>
             <p>
                 Hi! My name is Pablo Carbonero, and I’m a developer with a background in both 3D Animation and Software Development. During my 3D Animation studies, I had the opportunity to work as a programmer on the indie video game Mencía: A Never Was Tale, which was later released on Steam. After that, I started a degree in Cross-Platform App Development, and as part of my internship, I contributed to building a Pokémon TCG Pocket trading app with Flutter. Although I eventually moved on, the project continues to grow and evolve.
 
@@ -102,12 +103,15 @@
         </div>
     </div>
     
-    <br>
+    
 
     <!-- EXPERIENCE -->
     <div class="container" id="Experience">
 
-        <h1>Experience</h1>
+
+        <h1 class="neonTitle">Experience</h1>
+
+        
         <div class="card" id="experienceCard" data-aos="fade-up">
             <div class="card-body">
                 <div class="d-flex align-items-start gap-4">
@@ -115,6 +119,10 @@
                     <div>
                         <h4 class="card-title">Fullstack Flutter developer</h4>
                         <h6 class="card-text">M&L Apps</h6>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-calendar-week"></i> <span>March 2025 - June 2025</span>
+                            <i class="bi bi-geo-alt"></i> <span>Seville, Spain</span>
+                        </div>       
                     </div>     
                 </div>
                 <br>
@@ -142,7 +150,6 @@
             </div>
         </div>
 
-        <br>
 
         <div class="card" id="experienceCard" data-aos="fade-up">
             <div class="card-body">
@@ -171,13 +178,20 @@
                     <li>
                         Scrum methodology for the whole development.
                     </li>
+                    <li>
+                        You can see my name in the final credits!
+                    </li>
                 </ul>
 
-                <div class="card">
-                    <div class="d-flex align-items-center gap-4">
+
+
+                <div class="card" id="experienceCard">
+                    <div class="card-body">
                         <img class="card-img-top" src="https://cdn.devuego.com/portadas/mencia-a-never-was-tale.jpg" alt="Card image" style="width:100px">
-                        <div>
-                            <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="arrow" style="width: 20px;">
+                        <div class="card-footer">
+                            <div class="card-footer text-center">
+                                <a href="https://store.steampowered.com/app/2392660/Mencia_A_never_was_tale/" class="btn btn-outline-light btn-sm">Steam</a>
+                            </div>
                         </div>
                     </div>                     
                 </div>
@@ -186,12 +200,11 @@
         
     </div>
 
-    <br>
 
     <!-- Skills -->
     <div class="container" id="Skills">
 
-        <h1>Skills</h1>
+        <h1 class="neonTitle">Skills</h1>
 
         <h3>Programming languages</h3>    
         <div class="miniCardContainer">
@@ -233,11 +246,9 @@
             
     </div>
 
-    <br>
-
     <!-- Studies -->
     <div class="container" id="Studies">
-        <h1>Studies</h1>
+        <h1 class="neonTitle">Studies</h1>
 
         <div class="card" id="experienceCard" data-aos="fade-up">
             <div class="card-body">
@@ -263,36 +274,69 @@
             
     </div>
 
-    <br>
 
     <!-- Projects -->
     <div class="container" id="Projects">
-        <h1>Projects</h1>
+        <h1 class="neonTitle">Projects</h1>
 
-        <div class="card" id="experienceCard" data-aos="fade-up">
-            <div class="card-body">
-                <div class="d-flex align-items-start gap-4">
-                    <div>
-                        <h4 class="card-title">Android guitar tuner</h4>
-                        <h6>Android, Kotlin, Jetpack Compose</h6>
-                        <br>
-                        <p class="card-text">
-                            Elit adipisicing tempor mollit ipsum irure aute elit sunt laborum elit sint ad proident. Dolor Lorem cupidatat tempor quis eiusmod dolor id tempor deserunt officia aliquip occaecat. Eiusmod veniam anim irure qui pariatur ad proident do occaecat velit aliqua nostrud. Ex reprehenderit nisi irure nostrud cupidatat pariatur culpa ad ad. Adipisicing ea anim enim magna nisi aliqua ex. In adipisicing reprehenderit sint est voluptate esse anim ea sunt labore laborum consequat qui in. Aliqua anim ea in cupidatat pariatur magna amet incididunt exercitation reprehenderit.
-                        </p>
+        <div class="card" data-aos="fade-up" id="projectCard">
+            <div class="d-flex align-items-start gap-4 card-body">
+
+                <img src="assets/images/androidTunerPreview.png" alt="aa" class="card-img-top w-25" style="max-height: 10rem;">
+                
+                <div class="card-text d-flex flex-column">
+                    <h5 class="card-title">Android Guitar Tuner</h5>
+
+                    <p class="card-text">
+                        Cross-platform mobile tuner app built with Kotlin and Jetpack Compose.
+                        Do non dolor Lorem voluptate incididunt et eu do ex non. Adipisicing ipsum Lorem culpa ut. Est eiusmod aliqua elit ea fugiat sint enim deserunt eiusmod.
+                    </p>
+
+                    <div style="align-self: self-end;">
+                        <span class="badge bg-primary">Kotlin</span>
+                        <span class="badge bg-success">Compose</span>
+                        <span class="badge bg-warning text-dark">Android</span>
                     </div>
-                    
-                    
-                    
                 </div>
-        </div>
+            </div>
             
-    </div>
+            <div class="card-footer text-center">
+            <a href="https://github.com/tu-repo" class="btn btn-outline-light btn-sm">GitHub</a>
+            <a href="https://demo.com" class="btn btn-primary btn-sm">Demo</a>
+            </div>
+        </div>
 
-    <br>
+        <div class="card" data-aos="fade-up" id="projectCard">
+            <div class="d-flex align-items-start gap-4 card-body">
+
+                <img src="https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png" alt="flutter" class="card-img-top w-25" style="max-height: 10rem;">
+                
+                <div class="card-text d-flex flex-column">
+                    <h5 class="card-title">Flutter course projects</h5>
+
+                    <p class="card-text">
+                        Different small apps from a Flutter course.
+                        Do non dolor Lorem voluptate incididunt et eu do ex non. Adipisicing ipsum Lorem culpa ut. Est eiusmod aliqua elit ea fugiat sint enim deserunt eiusmod.
+                    </p>
+
+                    <div style="align-self: self-end;">
+                        <span class="badge bg-primary">Dart</span>
+                        <span class="badge bg-success">Flutter</span>
+                        <span class="badge bg-warning text-dark">Cross-platform</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-footer text-center">
+                <a href="https://github.com/tu-repo" class="btn btn-outline-light btn-sm">GitHub</a>
+                <a href="https://demo.com" class="btn btn-primary btn-sm">Demo</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact -->
     <div class="container" id="Contact">
-        <h1>Contact</h1>
+        <h1 class="neonTitle">Contact</h1>
 
         <div class="d-flex align-items-start gap-4">
             <p data-aos="fade-right" data-aos-duration="2000">E-Mail</p>
@@ -302,8 +346,6 @@
     </div>
 
 
-    <br>
-    <br>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

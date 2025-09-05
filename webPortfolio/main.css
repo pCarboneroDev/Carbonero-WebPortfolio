@@ -1,7 +1,11 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Victor Mono';
   background-color: #1a1a1a;
   color: #ffffffff;
+}
+
+i{
+  color: #ffcc00;
 }
 
 .miniCard{
@@ -18,7 +22,7 @@ body {
 
 .miniCard:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px #fc0356; 
+  box-shadow: 0 6px 14px #fc0356; 
 }
 
 .miniCardContainer {
@@ -28,7 +32,7 @@ body {
   gap: 2rem;
   overflow-x: auto; 
   scrollbar-width: thin;
-  padding: 0.5rem 0;     
+  padding: 1rem 0;     
   scrollbar-width: thin; 
   scroll-behavior: smooth;
 }
@@ -40,8 +44,7 @@ body {
 .hero {
   height: 100vh; /* altura = 100% de la ventana */
   width: 100%;    /* ancho completo */
- /* background: url('https://picsum.photos/1920/1080') center center/cover no-repeat;*/
- background: #6f42c1 url(assets/images/herobg.png) center/cover no-repeat;
+  background: #6f42c1 url(assets/images/herobg.png) center/cover no-repeat;
 }
 
 .hero h3{
@@ -51,10 +54,29 @@ body {
 .neonTitle {
   color: #ffcc00;
   text-shadow: 0 4px 10px #ffcc00;
+  text-align: center;
+}
+
+.container{
+  padding: 80px 0;
+}
+
+.card{
+  margin: 20px 0;
 }
 
 #experienceCard {
   background-color: #2b2b2b;
+  border-width: 1px;
+  border-color: #fc0356;
+  box-shadow: 0 4px 10px #fc0356;
+}
+
+#projectCard {
+  background-color: #2b2b2b;
+  border-width: 1px;
+  border-color: #fc0356;
+  box-shadow: 0 4px 10px #fc0356;
 }
 
 #startButton {
