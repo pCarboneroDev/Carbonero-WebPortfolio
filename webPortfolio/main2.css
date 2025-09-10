@@ -1,0 +1,298 @@
+.color-1 {
+  color: #1a1d2d;
+}
+.color-2 {
+  color: #2d2f4e;
+}
+.color-3 {
+  color: #4e4e7e;
+}
+.color-4 {
+  color: #8c8eca;
+}
+.color-5 {
+  color: #c2c4e5;
+}
+
+:root {
+  --color-1: #1a1d2d;
+  --color-2: #2d2f4e;
+  --color-2b: #2d2f4e75;
+  --color-3: #4e4e7e;
+  --color-3b: #4e4e7e75;
+  --color-4: #8c8eca;
+  --color-5: #c2c4e5;
+}
+
+
+body{
+    background-color: #1a1d2d;
+}
+
+li{
+    color: var(--color-5);
+}
+
+
+
+.hero {
+  height: 100vh; /* altura = 100% de la ventana */
+  width: 100%;    /* ancho completo */
+}
+
+.container{
+  padding: 80px 0;
+}
+
+.card{
+  margin: 20px 0;
+}
+
+.card-title{
+    color: var(--color-4);
+}
+
+.card-text{
+    color: var(--color-5);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--color-5);  
+  color: var(--color-3);              
+  border-color: var(--color-5);
+}
+
+.nav-tabs .nav-link {
+  color: var(--color-5);
+}
+
+
+.nav-tabs .nav-link.active:hover {
+  background-color: var(--color-5);  
+  color: var(--color-3);              
+  border-color: var(--color-5);
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: var(--color-3);
+  border-color: var(--color-3);
+}
+
+.nav-item{
+    color: var(--color-5);
+}
+
+.miniCard{
+  font-size: 1.5rem;
+  color: var(--color-2);
+  background: var(--color-4);
+  padding: 0.5rem 2rem;
+  border-radius: .3rem;
+  box-shadow: 0 4px 10px var(--color-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  white-space: nowrap;  /* no permitir saltos de línea */
+}
+
+.miniCardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-x: auto; 
+  scrollbar-width: thin;
+  padding: 1rem 0;     
+  scrollbar-width: thin; 
+  scroll-behavior: smooth;
+}
+
+.miniCardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.aboutText{
+    color: var(--color-5);
+    font-size: large;
+}
+
+/*.card.aos-animate {
+  transition: important!;
+}*/
+
+
+
+
+#startButton {
+  background-color: var(--color-2b);
+  color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#startButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px var(--color-5); 
+}
+
+
+#startButton.aos-animate {
+  transition-duration: 2700ms !important;
+}
+
+
+#experienceCard {
+  background-color: var(--color-2b);
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+  transition: box-shadow 0.2s ease, transform 0.5s ease, opacity 0.5s ease;
+}
+#experienceCard:hover {
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-5);
+}
+
+#projectCard {
+  background-color: var(--color-2b);
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+  transition: box-shadow 0.2s ease, transform 0.5s ease, opacity 0.5s ease;
+}
+#projectCard:hover {
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-5);
+}
+
+#contactCard {
+  background-color: var(--color-3b);
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+}
+
+#contactCard:hover {
+  transform: scale(1.05);
+  border-color: var(--color-5);
+  box-shadow: 0 6px 12px var(--color-5);
+}
+
+#skillsCard{
+  background-color: transparent;
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+}
+
+
+
+/* CSS DE LAS BOLITAS */
+@keyframes move{
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--color-1);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.ball {
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  /*animation: move linear infinite;*/
+  animation: move linear infinite, breathe 6s ease-in-out infinite;
+}
+
+.ball:nth-child(odd) {
+    color: var(--color-2);
+}
+
+.ball:nth-child(even) {
+    color: var(--color-3);
+}
+
+/* Using a custom attribute for variability */
+.ball:nth-child(1) {
+  top: 77%;
+  left: 88%;
+  animation-duration: 40s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 40vmin 0 5.703076368487546vmin currentColor;
+}
+.ball:nth-child(2) {
+  top: 42%;
+  left: 2%;
+  animation-duration: 53s;
+  animation-delay: -29s;
+  transform-origin: -19vw 21vh;
+  box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
+}
+.ball:nth-child(3) {
+  top: 28%;
+  left: 18%;
+  animation-duration: 49s;
+  animation-delay: -8s;
+  transform-origin: -22vw 3vh;
+  box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
+}
+.ball:nth-child(4) {
+  top: 50%;
+  left: 79%;
+  animation-duration: 26s;
+  animation-delay: -21s;
+  transform-origin: -17vw -6vh;
+  box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
+}
+.ball:nth-child(5) {
+  top: 46%;
+  left: 15%;
+  animation-duration: 36s;
+  animation-delay: -40s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
+}
+.ball:nth-child(6) {
+  top: 77%;
+  left: 16%;
+  animation-duration: 31s;
+  animation-delay: -10s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+}
+.ball:nth-child(7) {
+  top: 22%;
+  left: 17%;
+  animation-duration: 55s;
+  animation-delay: -6s;
+  transform-origin: 1vw -23vh;
+  box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+}
+.ball:nth-child(8) {
+  top: 41%;
+  left: 47%;
+  animation-duration: 43s;
+  animation-delay: -28s;
+  transform-origin: 25vw -3vh;
+  box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
+}
