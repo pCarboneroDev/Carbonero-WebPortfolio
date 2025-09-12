@@ -114,6 +114,19 @@ li{
     font-size: large;
 }
 
+.langBg{
+  background-color: var(--color-3);
+}
+
+.fwBg{
+  background-color: var(--color-4);
+}
+
+.platBg{
+  color: var(--color-2);
+  background-color: var(--color-5);
+}
+
 
 
 
