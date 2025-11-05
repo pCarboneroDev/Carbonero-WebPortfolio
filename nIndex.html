@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="portfolio.css">
+        <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({once: true});
+        </script>
+        <body data-bs-spy="scroll" data-bs-target="#nav" data-bs-offset="70" tabindex="0"></body>
+
+        <div class="background">
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+        </div>
+
+
+        <!-- NAV BAR -->
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="nav">
+                <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- LINKS -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#About">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Experience">Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Skills">Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Projects">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- NAV BAR -->
+
+
+        <!-- HERO  d-flex align-items-center justify-content-center text-center text-white-->
+        <section class="hero d-flex align-items-center justify-content-center text-center text-white">
+            <!-- PANTALLA GRANDE-->
+            <div class="container d-none d-lg-block">
+                <div class="d-flex align-items-start gap-4">
+                    <img src="assets/images/profile.png" alt="Mi imagen" class="rounded-circle w-25" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500" style="margin-right: 10rem;"> 
+                    <div style="text-align: start;">
+                        <h3 data-aos="fade-right" data-aos-duration="1700" class="color-3">Hello! I am</h3>
+                        <h1 data-aos="fade-left" data-aos-duration="1900" class="color-5">Pablo Carbonero Almellones</h1>
+                        <h2 data-aos="fade-right" data-aos-duration="2400" class="color-4">Software developer</h2>
+                        <p data-aos="fade-up" data-aos-duration="2100" class="color-5">
+                            I am a Software Developer specialised in Android and cross-platform app development, with expertise in Flutter, Jetpack Compose, and .NET frameworks.
+                            Experienced with both front-end and back-end sides of an application. Additionally, I have extensive knowledge of a wide range of
+                            programming languages and technologies, enabling me to work in nearly all areas of software development. 
+                        </p>
+                    </div>          
+                </div>
+                
+                <a href="#About" class="btn btn-lg mt-3" id="startButton" data-aos="fade-up" data-aos-duration="2100">
+                    Get to know me
+                </a>
+            </div>
+
+            <!-- PANTALLA PEQUEÑA-->
+            <div class="container d-lg-none">
+                <img src="assets/images/profile.png" alt="Mi imagen" class="rounded-circle w-25" 
+                data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500"> 
+                <br>
+                <br>
+                <h3 data-aos="fade-right" data-aos-duration="1700" class="color-3">Hello! I am</h3>
+                <h1 data-aos="fade-left" data-aos-duration="1900" class="color-5">Pablo Carbonero Almellones</h1>
+                <h2 class="neonTitle" data-aos="fade-right" data-aos-duration="2400" class="color-4">Software developer</h2>
+                <p data-aos="fade-up" data-aos-duration="2100" class="color-5">
+                    I am a Software Developer specialised in Android and cross-platform app development, particularly with Flutter and Jetpack Compose.
+                    Experienced with both front-end and back-end sides of an application. Additionally, I have extensive knowledge of a wide range of
+                    programming languages and technologies, enabling me to work in nearly all areas of software development. 
+                </p>
+                <a href="#About" class="btn color-2 btn-lg mt-3" id="startButton"
+                data-aos="fade-up" data-aos-duration="2100">
+                    Get to know me
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ABOUT ME -->
+        <section id="About">
+            <div class="container">
+                <div>
+                    <h1 class="color-4">About me</h1>
+
+                    <div class="col-md-8">
+
+                        <p class="aboutText">
+                        Hi! My name is Pablo Carbonero, and I’m a developer with a background in both 3D Animation and Software Development. During my 3D Animation studies, I had the opportunity to work as a programmer on the indie video game Mencía: A Never Was Tale, which was later released on Steam. After that, I started a degree in Cross-Platform App Development, and as part of my internship, I contributed to building a Pokémon TCG Pocket trading app with Flutter. Although I eventually moved on, the project continues to grow and evolve.
+
+                        <br><br>I’m passionate about mobile app development, and my main goal is to grow professionally in this field. At the same time, I’m open to opportunities in fullstack or backend development, where I can apply my problem-solving skills and keep expanding my technical knowledge.
+
+                        <br><br>Outside of coding, I enjoy music and video games. I play the guitar and practice guttural singing. I was even part of a band that got to play live once before disbanding. Creativity and music inspire me and help me stay balanced as a developer.
+
+                        <br><br>Feel free to check out my projects, and don’t hesitate to reach out if you’d like to collaborate!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- EXPERIENCE -->
+        <section id="Experience">
+            <div class="container" id="expContainer">
+                <h1 class="color-4">Experience</h1>
+            </div>
+        </section>
+        <!-- EXPERIENCE -->
+
+
+        <!-- SKILLS -->
+        <section id="Skills">
+            <div class="container">
+                <h1 class="color-4">Skills</h1>
+
+                <div class="card" id="skillsCard">
+
+                    <div class="card-header">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="exp-tab" data-bs-toggle="tab" data-bs-target="#lang" type="button" role="tab">
+                                    Languages
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="proj-tab" data-bs-toggle="tab" data-bs-target="#frame" type="button" role="tab">
+                                    Frameworks
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="studies-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab">
+                                    Others
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="card-body tab-content" id="tab-content">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="Projects">
+            <div class="container" id="projectContainer">
+                <h1 class="color-4">Projects</h1>
+            </div>
+        </section>
+        <!-- PROJECTS -->
+
+        <!-- Contact -->
+        <section id="Contact">
+            <div class="container">
+                <h1 class="color-4">Contact</h1>
+                <div class="d-flex flex-column flex-md-row align-items-center gap-4" id="contactContainer"></div>      
+            </div>
+        </section>
+    </body>
+</html>
+
+
