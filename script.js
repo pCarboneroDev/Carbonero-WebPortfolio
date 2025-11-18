@@ -24,22 +24,6 @@ const db = getFirestore(app);
 
 // METHODS
 
-function sendEmail(){
-    document.getElementById("contactForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const sendEmail = httpsCallable(functions, "sendEmail");
-
-    await sendEmail({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-    });
-
-    alert("Correo enviado correctamente");
-    });
-}
-
 function loadEverything(){
     loadExperience()
     loadProjects()
@@ -137,9 +121,15 @@ function writeProjects(projects){
                         <p class="card-text">${project.description || ""}"</p>
 
                         <div style="align-self: self-end;">
-                                <span class="badge langBg">not-implemented</span>
-                                <span class="badge fwBg">not-implemented</span>
-                                <span class="badge platBg">not-implemented</span>
+                                ${
+                                    project.language ? `<span class="badge langBg">${project.language}</span>` : ''
+                                }
+                                ${
+                                    project.framework ? `<span class="badge fwBg">${project.framework}</span>` : ''
+                                }
+                                ${
+                                    project.platform ? `<span class="badge platBg">${project.platform}</span>` : ''
+                                }
                         </div>
                     </div>
                 </div>
@@ -185,30 +175,30 @@ function writeContacts(contacts){
     contacts.forEach(contact => {
         
 
-        if(contact.contactName == "Tlfn number") {
-            //continue;
+        if(contact.contactName != "Tlfn number") {
+            var card = `
+                <a href="${contact.targetUrl}" target="_blank" style="text-decoration: none; color: inherit;" data-aos="fade-right" data-aos-duration="${aosDuration}">
+                    <div class="card" id="contactCard" style="padding: 0.5rem;">
+                        <div class="d-flex align-items-center gap-4">
+                            <img src="${contact.imageUrl}" alt="l" style="max-width: 2rem;">
+                            <div>
+                                <h6 class="card-title">
+                                    ${contact.contactName}
+                                </h6>
+                                <p class="card-text">
+                                    ${contact.contactDesc}
+                                </p>
+                            </div>
+                            <i class="bi bi-box-arrow-up-right color-5"></i>
+                        </div>
+                    </div>
+                </a>
+            `;
+            aosDuration -= 500;
+            container.insertAdjacentHTML("beforeend", card);
         }
 
-        var card = `
-            <a href="${contact.targetUrl}" target="_blank" style="text-decoration: none; color: inherit;" data-aos="fade-right" data-aos-duration="${aosDuration}">
-                <div class="card" id="contactCard" style="padding: 0.5rem;">
-                    <div class="d-flex align-items-center gap-4">
-                        <img src="${contact.imageUrl}" alt="l" style="max-width: 2rem;">
-                        <div>
-                            <h6 class="card-title">
-                                ${contact.contactName}
-                            </h6>
-                            <p class="card-text">
-                                ${contact.contactDesc}
-                            </p>
-                        </div>
-                        <i class="bi bi-box-arrow-up-right color-5"></i>
-                    </div>
-                </div>
-            </a>
-        `;
-        aosDuration -= 500;
-        container.insertAdjacentHTML("beforeend", card);
+        
     });
 }
 
