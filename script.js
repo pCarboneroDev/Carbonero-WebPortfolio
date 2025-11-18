@@ -1,18 +1,44 @@
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-functions.js";
 
-// CLASSES
 
-class Projects {
-  constructor(name, description, imageUrl, projectUrl) {
-    this.name = name;
-    this.description = description;
-    this.imageUrl = imageUrl;
-    this.projectUrl = projectUrl ?? '';
-  }
-}
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC58lJR7WHOeGak4UmZi8tfmOx_k_4ECbo",
+  authDomain: "portfolioapp-d88c6.firebaseapp.com",
+  projectId: "portfolioapp-d88c6",
+  storageBucket: "portfolioapp-d88c6.firebasestorage.app",
+  messagingSenderId: "354849908983",
+  appId: "1:354849908983:web:0f60b9d277bc2ed4da0bf2",
+  measurementId: "G-KZT56Y5630"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 
 // METHODS
+
+function sendEmail(){
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const sendEmail = httpsCallable(functions, "sendEmail");
+
+    await sendEmail({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    });
+
+    alert("Correo enviado correctamente");
+    });
+}
 
 function loadEverything(){
     loadExperience()
@@ -25,13 +51,16 @@ function loadEverything(){
 // EXPERIENCE
 async function loadExperience() {
     try {
-        const res = await fetch("https://portfolio-backend-jjgf.onrender.com/experience");
+        const docRef = doc(db, "experience", "en");
+        const snap = await getDoc(docRef);
 
-        if (!res.ok) throw new Error(res.statusText);
-
-        const experience = await res.json(); // ya parsea JSON
-
-        writeExperience(experience);
+        if (snap.exists()) {
+            const data = snap.data(); 
+            const experience = data.items;
+            writeExperience(experience);
+        } else {
+            console.log("No existe el documento EN");
+        }
     } catch (err) {
         console.error("Error cargando experiencia:", err);
     }
@@ -44,7 +73,7 @@ function writeExperience(experience) {
         const descriptionHTML = exp.description?.map(d => `<li>${d}</li>`).join("") || "";
 
         const cardHTML = `
-            <div class="card" id="experienceCard" data-aos="fade-up">
+            <div class="card infoCard" data-aos="fade-up">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-4">
                         <img src="${exp.companyLogo || ''}" alt="${exp.companyName || ''}" style="width: 100px;">
@@ -76,15 +105,18 @@ function writeExperience(experience) {
 // PROJECTS
 async function loadProjects() {
     try {
-        const res = await fetch("https://portfolio-backend-jjgf.onrender.com/projects");
+        const docRef = doc(db, "projects", "en");
+        const snap = await getDoc(docRef);
 
-        if (!res.ok) throw new Error(res.statusText);
-
-        const projects = await res.json();
-
-        writeProjects(projects);
+        if (snap.exists()) {
+            const data = snap.data(); 
+            const projects = data.items;
+            writeProjects(projects);
+        } else {
+            console.log("document does not exists");
+        }
     } catch (err) {
-        console.error("Error cargando experiencia:", err);
+        console.error("Error loading projects:", err);
     }
 }
 
@@ -94,7 +126,7 @@ function writeProjects(projects){
     projects.forEach(project => {
 
         var cardHTML = `
-            <div class="card" id="projectCard">
+            <div class="card infoCard" data-aos="fade-up">
                 <div class="d-flex align-items-start gap-4 card-body">
 
                     <img src="${project.imageUrl || ""}" alt="aa" class="card-img-top w-25" style="max-width: 10rem;">
@@ -131,17 +163,18 @@ function writeProjects(projects){
 // CONTACT
 async function loadContact() {
     try {
-        const res = await fetch("https://portfolio-backend-jjgf.onrender.com/contact");
+        const docRef = doc(db, "contact", "en");
+        const snap = await getDoc(docRef);
 
-        if (!res.ok) throw new Error(res.statusText);
-
-        const contacts = await res.json(); 
-
-        console.log(contacts);
-
-        writeContacts(contacts);
+        if (snap.exists()) {
+            const data = snap.data(); 
+            const contact = data.items;
+            writeContacts(contact);
+        } else {
+            console.log("document does not exists");
+        }
     } catch (err) {
-        console.error("Error cargando contactos:", err);
+        console.error("Error loading contact:", err);
     }
 }
 
@@ -182,20 +215,21 @@ function writeContacts(contacts){
 // ABOUT
 async function loadAbout() {
     try {
-        const res = await fetch("https://portfolio-backend-jjgf.onrender.com/about");
+        const docRef = doc(db, "about", "en");
+        const snap = await getDoc(docRef);
 
-        if (!res.ok) throw new Error(res.statusText);
-
-        const about = await res.json(); 
-
-        console.log(about);
-
-        const skills = [about.languages, about.frameworks, about.other];
-
-        writeSkills(skills);
-        //writeAbout(about);
+        if (snap.exists()) {
+            const data = snap.data(); 
+            const about = data.items;
+            console.log(about);
+            const skills = [{'languages': about.languages}, {'frameworks': about.frameworks}, {'other': about.other}]
+            writeSkills(skills);
+            writeAbout(about);
+        } else {
+            console.log("document does not exists");
+        }
     } catch (err) {
-        console.error("Error cargando about:", err);
+        console.error("Error loading about:", err);
     }
 }
 
@@ -215,27 +249,21 @@ function writeSkills(skills){
 
         const content = document.getElementById("tab-content");
         var base = ``;
-        if (index == 0){
-            base = `
-            <div class="tab-pane fade show active" id="lang" role="tabpanel">
-                            <div class="miniCardContainer" id="elements${index}">
+        const key = Object.keys(skill)[0];
+        const isActive = index === 0 ? "show active" : "";
+
+        base = `
+            <div class="tab-pane fade ${isActive}" id="${key}" role="tabpanel">
+                            <div class="miniCardContainer" id="elements${key}">
                                 
                             </div>
                         </div>`;
-        }
-        else{
-            base = `
-            <div class="tab-pane fade show" id="lang" role="tabpanel">
-                            <div class="miniCardContainer" id="elements${index}">
-                                
-                            </div>
-                        </div>`;
-        }
+
         
         content.insertAdjacentHTML("beforeend", base);
 
-        skill.forEach(e =>{
-            const content = document.getElementById(`elements${index}`);
+        skill[key].forEach(e =>{
+            const content = document.getElementById(`elements${key}`);
 
             var row = 
             `
@@ -249,38 +277,23 @@ function writeSkills(skills){
     });
 }
 
-function writeAbout(contacts){
-    const container = document.getElementById("contactContainer");
-    var aosDuration = 2000;
+function writeAbout(about){
+    const container = document.getElementsByClassName('aboutText')
 
-    contacts.forEach(contact => {
-        
-
-        if(contact.contactName == "Tlfn number") {
-            //continue;
-        }
-
-        var card = `
-            <a href="${contact.targetUrl}" target="_blank" style="text-decoration: none; color: inherit;" data-aos="fade-right" data-aos-duration="${aosDuration}">
-                <div class="card" id="contactCard" style="padding: 0.5rem;">
-                    <div class="d-flex align-items-center gap-4">
-                        <img src="${contact.imageUrl}" alt="l" style="max-width: 2rem;">
-                        <div>
-                            <h6 class="card-title">
-                                ${contact.contactName}
-                            </h6>
-                            <p class="card-text">
-                                ${contact.contactDesc}
-                            </p>
-                        </div>
-                        <i class="bi bi-box-arrow-up-right color-5"></i>
-                    </div>
-                </div>
-            </a>
-        `;
-        aosDuration -= 500;
-        container.insertAdjacentHTML("beforeend", card);
-    });
+    Array.from(container).forEach(e =>{ //TypeError: container.forEach is not a function
+            e.append(about.longDescription)
+    })
+    //container.insertAdjacentHTML("beforeend", card);
 }
 
-document.addEventListener("DOMContentLoaded", loadEverything);
+document.addEventListener("DOMContentLoaded", loadEverything, refreshNavbar);
+
+function refreshNavbar () {
+    const scrollSpyEl = document.body;
+    bootstrap.ScrollSpy.getInstance(scrollSpyEl)?.dispose(); // eliminar instancia anterior
+
+    new bootstrap.ScrollSpy(scrollSpyEl, {
+        target: "#navbarNav",
+        offset: 80
+    });
+}

@@ -25,13 +25,19 @@
   --color-5b: #c2c4e575;
 }
 
+@media (max-width: 768px) {
+    body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
 
 body{
-    background-color: #1a1d2d;
+  background-color: #1a1d2d;
 }
 
 li{
-    color: var(--color-5);
+  color: var(--color-5);
 }
 
 
@@ -127,6 +133,92 @@ li{
   background-color: var(--color-5);
 }
 
+.infoCard{
+  background-color: var(--color-2b);
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+  transition: box-shadow 0.2s ease, transform 0.5s ease, opacity 0.5s ease;
+}
+.infoCard:hover {
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-5);
+}
+
+.typewriter {
+  overflow: hidden;              
+  border-right: 4px solid var(--color-5);  
+  white-space: nowrap;           
+  width: 0;                    
+  animation: typing 3s steps(40, end) forwards, blink 1s steps(1,end) infinite;
+}
+
+/* Animación del texto */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink {
+  0%   { border-right-color: var(--color-5); }
+  50%  { border-right-color: transparent; }
+  100% { border-right-color: var(--color-5); }
+}
+
+/* NAVBAR */
+/* Fondo efecto glass minimalista */
+.glass-nav {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+/* Efecto al hacer scroll (navbar más sólido) */
+.glass-nav.scrolled {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* NAV links modernos */
+.elegant-nav .nav-link {
+  position: relative;
+  margin: 0 12px;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Color al hover */
+.elegant-nav .nav-link:hover {
+  color: var(--color-5);
+}
+
+/* Línea animada debajo del link */
+.elegant-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-5);
+  transition: width 0.35s ease;
+}
+
+.elegant-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Link activo con línea fija */ 
+.elegant-nav .nav-link.active::after {
+  width: 100%;
+}
+
+
+
+
+
 
 
 
@@ -147,7 +239,7 @@ li{
 }
 
 
-#experienceCard {
+/*#experienceCard {
   background-color: var(--color-2b);
   border-width: 1px;
   border-color: var(--color-5);
@@ -169,7 +261,7 @@ li{
 #projectCard:hover {
   border-color: var(--color-5);
   box-shadow: 0 4px 10px var(--color-5);
-}
+}*/
 
 #contactCard {
   background-color: var(--color-3b);
@@ -178,7 +270,6 @@ li{
   box-shadow: 0 4px 10px var(--color-4);
   transition: transform 0.5s ease, box-shadow 0.2s ease;
 }
-
 #contactCard:hover {
   transform: scale(1.05);
   border-color: var(--color-5);
@@ -194,6 +285,37 @@ li{
 
 #experienceLinkCard{
   border-color: transparent;
+}
+
+#formCard{
+  background-color: var(--color-2b);
+  border-width: 1px;
+  border-color: var(--color-5);
+  box-shadow: 0 4px 10px var(--color-4);
+}
+
+.formInput{
+  background-color: var(--color-5);
+  color: var(--color-1);
+}
+
+.formBtn{
+  width: 200px; /* Puedes ajustarlo: px, %, rem, etc */
+  display: block;
+  margin: 15px auto; /* Lo centra horizontalmente */
+
+  background-color: #007bff; /* Color primario bootstrap */
+  border-color: #007bff;
+  font-weight: bold;
+  border-radius: 8px; /* Bordes más redondeados */
+  padding: 10px;
+  transition: 0.3s ease-in-out; /* efecto suave */
+}
+
+.formBtn:hover {
+  background-color: #0056b3; /* azul más oscuro */
+  border-color: #004c99;
+  transform: scale(1.05); /* pequeño zoom */
 }
 
 .steamBtn{
