@@ -268,12 +268,48 @@ function writeSkills(skills){
 }
 
 function writeAbout(about){
-    const container = document.getElementsByClassName('aboutText')
+    const aboutLarge = document.getElementById('aboutLarge');
+    aboutLarge.insertAdjacentHTML(
+        "beforeend",
+        `
+            <img src="${about.profilePicture}" 
+            alt="Mi imagen" 
+            class="rounded-circle w-25"
+            data-aos="fade-right" 
+            data-aos-anchor-placement="start-end" 
+            data-aos-duration="1500" 
+            style="margin-right: 10rem;">
 
-    Array.from(container).forEach(e =>{ //TypeError: container.forEach is not a function
-            e.append(about.longDescription)
-    })
-    //container.insertAdjacentHTML("beforeend", card);
+            <div style="text-align: start;">
+                <p class="aboutText">
+                </p>
+            </div>
+        `
+    );
+
+    const aboutSmall = document.getElementById('aboutSmall');
+    aboutSmall.insertAdjacentHTML(
+        "beforeend",
+        `
+            <img src="${about.profilePicture}" 
+            alt="Mi imagen" 
+            class="rounded-circle w-50"
+            data-aos="fade-bottom" 
+            data-aos-anchor-placement="top-bottom" 
+            data-aos-duration="1500" 
+            style="margin-bottom: 5rem;">
+
+            <div style="text-align: center;">
+                <p class="aboutText">
+                </p>
+            </div>
+        `
+    );
+
+    const container = document.getElementsByClassName('aboutText');
+    Array.from(container).forEach(e =>{
+        e.append(about.longDescription);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", loadEverything, refreshNavbar);
